@@ -1,0 +1,76 @@
+---
+// Root page - Language detection and redirect
+// Note: On Netlify, server-side redirects handle this (see netlify.toml)
+// This page serves as fallback for local development and non-Netlify hosting
+
+import { translations } from '../i18n/translations';
+const t = translations.fr;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{t.siteTitle}</title>
+		<meta name="description" content={t.siteDescription} />
+
+		<!-- Hreflang for SEO -->
+		<link rel="alternate" hreflang="fr" href="https://constructionjds.com/fr/" />
+		<link rel="alternate" hreflang="en" href="https://constructionjds.com/en/" />
+		<link rel="alternate" hreflang="x-default" href="https://constructionjds.com/fr/" />
+
+		<!-- Canonical points to French as default -->
+		<link rel="canonical" href="https://constructionjds.com/fr/" />
+
+		<!-- Redirect script for client-side (fallback) -->
+		<script is:inline>
+			(function() {
+				// Check localStorage first (returning visitor preference)
+				var saved = localStorage.getItem('language');
+				if (saved === 'en' || saved === 'fr') {
+					window.location.replace('/' + saved + '/');
+					return;
+				}
+
+				// Check browser language
+				var browserLang = navigator.language || navigator.userLanguage || '';
+				if (browserLang.toLowerCase().startsWith('en')) {
+					window.location.replace('/en/');
+					return;
+				}
+
+				// Default to French
+				window.location.replace('/fr/');
+			})();
+		</script>
+	</head>
+	<body>
+		<!-- SEO-friendly content for crawlers that don't execute JS -->
+		<main style="max-width: 800px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, sans-serif;">
+			<h1>Construction Renovation JDS</h1>
+			<p>{t.siteDescription}</p>
+
+			<nav style="margin-top: 30px;">
+				<h2>Choose your language / Choisissez votre langue:</h2>
+				<ul style="list-style: none; padding: 0; display: flex; gap: 20px;">
+					<li>
+						<a href="/fr/" style="display: inline-block; padding: 15px 30px; background: #DC2626; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
+							Français
+						</a>
+					</li>
+					<li>
+						<a href="/en/" style="display: inline-block; padding: 15px 30px; background: #1f2937; color: white; text-decoration: none; border-radius: 8px; font-weight: bold;">
+							English
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<noscript>
+				<meta http-equiv="refresh" content="0;url=/fr/" />
+				<p>Redirecting to French version... <a href="/fr/">Click here if not redirected</a></p>
+			</noscript>
+		</main>
+	</body>
+</html>

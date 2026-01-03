@@ -1,0 +1,142 @@
+---
+import { translations, type Language } from '../i18n/translations';
+
+interface Props {
+	lang?: Language;
+	title?: string;
+	description?: string;
+}
+
+const {
+	lang = 'fr',
+	title,
+	description,
+} = Astro.props;
+
+const t = translations[lang];
+const siteUrl = 'https://constructionjds.com'; // Update with your actual domain
+const currentPath = lang === 'fr' ? '/fr/' : '/en/';
+const canonicalUrl = `${siteUrl}${currentPath}`;
+
+// Use provided title/description or fall back to translations
+const pageTitle = title || t.siteTitle;
+const pageDescription = description || t.siteDescription;
+---
+
+<!doctype html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- SEO Meta Tags -->
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<meta name="keywords" content={t.siteKeywords} />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Hreflang Tags for International SEO -->
+		<link rel="alternate" hreflang="fr" href={`${siteUrl}/fr/`} />
+		<link rel="alternate" hreflang="en" href={`${siteUrl}/en/`} />
+		<link rel="alternate" hreflang="x-default" href={`${siteUrl}/fr/`} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:site_name" content="Construction Renovation JDS" />
+		<meta property="og:locale" content={lang === 'fr' ? 'fr_CA' : 'en_CA'} />
+		<meta property="og:locale:alternate" content={lang === 'fr' ? 'en_CA' : 'fr_CA'} />
+		<meta property="og:image" content={`${siteUrl}/logo.png`} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content={`${siteUrl}/logo.png`} />
+
+		<!-- Additional SEO -->
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Construction Renovation JDS" />
+		<meta name="geo.region" content="CA-QC" />
+		<meta name="geo.placename" content="Saint-Eustache, Laurentides" />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "HomeAndConstructionBusiness",
+			"name": "Construction Renovation JDS",
+			"description": pageDescription,
+			"url": siteUrl,
+			"telephone": "+1-514-XXX-XXXX",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Saint-Eustache",
+				"addressRegion": "QC",
+				"addressCountry": "CA"
+			},
+			"areaServed": [
+				"Saint-Eustache",
+				"Laval",
+				"Sainte-Thérèse",
+				"Oka",
+				"Laurentides",
+				"Rive-Nord"
+			],
+			"serviceType": [
+				"Bathroom Renovation",
+				"Flooring Installation",
+				"Interior Renovation",
+				"Exterior Renovation",
+				"Doors and Windows",
+				"Ceramic Installation"
+			],
+			"priceRange": "$$",
+			"image": `${siteUrl}/logo.png`,
+			"sameAs": []
+		})} />
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+	</head>
+	<body id="top" class="antialiased">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		/* Header height calculation: padding-y * 2 + logo height + border */
+		/* Mobile: py-3 (0.75rem * 2) + h-12 (3rem) + border-b-2 (2px) */
+		--header-height: calc(0.75rem * 2 + 3rem + 2px);
+	}
+
+	@media (min-width: 768px) {
+		:root {
+			/* Desktop: py-4 (1rem * 2) + h-14 (3.5rem) + border-b-2 (2px) */
+			--header-height: calc(1rem * 2 + 3.5rem + 2px);
+		}
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		margin: 0;
+		padding: 0;
+		font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	}
+
+	/* Scroll margin for anchor links to account for fixed header */
+	[id] {
+		scroll-margin-top: var(--header-height);
+	}
+</style>
