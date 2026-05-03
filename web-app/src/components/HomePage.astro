@@ -17,7 +17,7 @@ const altUrl = `/${altLang}/`;
 <Layout lang={lang}>
 	<!-- Sticky Header -->
 	<header
-		class="fixed top-0 w-full bg-neutral-900 text-white shadow-lg z-50 transition-all border-b-2 border-primary/40"
+		class="fixed top-0 w-full bg-black text-white shadow-lg z-50 transition-all border-b-2 border-primary/40"
 	>
 		<div class="container mx-auto px-4 py-3 md:py-4">
 			<div class="flex items-center justify-between">
@@ -27,9 +27,9 @@ const altUrl = `/${altLang}/`;
 					class="flex items-center space-x-3 hover:opacity-90 transition-opacity"
 				>
 					<img
-						src="/logo.png"
+						src="/logo3.PNG"
 						alt={t.companyName}
-						class="h-12 md:h-14 w-auto"
+						class="h-12 md:h-16 w-auto"
 					/>
 					<div class="flex-shrink-0 hidden sm:block">
 						<h1 class="text-lg md:text-xl font-bold">
@@ -43,7 +43,7 @@ const altUrl = `/${altLang}/`;
 				<div class="flex items-center gap-2 md:gap-4">
 					<a
 						href="tel:514XXXXXXX"
-						class="hidden sm:flex items-center space-x-2 bg-white/10 hover:bg-primary/30 px-3 md:px-4 py-2 rounded-lg transition-colors backdrop-blur-sm border border-white/10 hover:border-primary/50"
+						class="hidden sm:flex items-center space-x-2 bg-white/10 hover:bg-secondary/30 px-3 md:px-4 py-2 rounded-lg transition-colors backdrop-blur-sm border border-white/10 hover:border-secondary/50"
 					>
 						<svg
 							class="w-5 h-5"
@@ -68,7 +68,7 @@ const altUrl = `/${altLang}/`;
 
 	<!-- Hero Section -->
 	<section
-		class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-900 text-white pt-20"
+		class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-primary-800 text-white pt-20"
 	>
 		<!-- Background Pattern -->
 		<div class="absolute inset-0 opacity-10">
@@ -88,16 +88,16 @@ const altUrl = `/${altLang}/`;
 					{t.heroTitle}
 				</h2>
 				<p
-					class="text-xl md:text-2xl text-primary-200 font-semibold mb-4"
+					class="text-xl md:text-2xl text-secondary-200 font-semibold mb-4"
 				>
 					{t.heroSubtitle}
 				</p>
 				<p
-					class="text-lg md:text-xl text-gray-300 mb-8 max-w-3xl mx-auto"
+					class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto"
 				>
 					{t.heroDescription}
 				</p>
-				<p class="text-primary-300 text-sm md:text-base mb-10">
+				<p class="text-secondary-300 text-sm md:text-base mb-10">
 					📍 {t.heroLocation}
 				</p>
 
@@ -107,7 +107,7 @@ const altUrl = `/${altLang}/`;
 				>
 					<a
 						href="tel:514XXXXXXX"
-						class="group w-full sm:w-auto bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center space-x-2"
+						class="group w-full sm:w-auto bg-secondary-600 hover:bg-secondary-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center space-x-2"
 					>
 						<svg
 							class="w-6 h-6"
@@ -126,7 +126,7 @@ const altUrl = `/${altLang}/`;
 					</a>
 					<a
 						href="#contact"
-						class="w-full sm:w-auto bg-white hover:bg-gray-100 text-primary px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
+						class="w-full sm:w-auto bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-xl hover:shadow-2xl hover:scale-105"
 					>
 						{t.bookAppointment}
 					</a>
@@ -136,9 +136,22 @@ const altUrl = `/${altLang}/`;
 				<div class="sm:hidden mt-8">
 					<a
 						href="tel:514XXXXXXX"
-						class="text-2xl font-bold text-white hover:text-primary-200 transition-colors"
+						class="text-2xl font-bold text-white hover:text-secondary-300 transition-colors flex items-center justify-center gap-3"
 					>
-						📞 {t.phone}
+						<svg
+							class="w-8 h-8 text-secondary-400"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+							></path>
+						</svg>
+						<span>{t.phone}</span>
 					</a>
 				</div>
 			</div>
@@ -193,10 +206,10 @@ const altUrl = `/${altLang}/`;
 					class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center"
 				>
 					<div
-						class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+						class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
 					>
 						<svg
-							class="w-8 h-8 text-primary"
+							class="w-8 h-8 text-secondary"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -246,10 +259,10 @@ const altUrl = `/${altLang}/`;
 					class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center"
 				>
 					<div
-						class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+						class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
 					>
 						<svg
-							class="w-8 h-8 text-primary"
+							class="w-8 h-8 text-secondary"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -355,11 +368,11 @@ const altUrl = `/${altLang}/`;
 						},
 					].map((service, index) => (
 						<div
-							class="bg-gray-50 hover:bg-primary/5 p-6 rounded-lg border-2 border-transparent hover:border-primary transition-all group"
+							class="bg-gray-50 hover:bg-secondary/5 p-6 rounded-lg border-2 border-transparent hover:border-secondary transition-all group"
 							key={index}
 						>
 							<svg
-								class="w-10 h-10 text-primary mb-3 group-hover:scale-110 transition-transform"
+								class="w-10 h-10 text-secondary mb-3 group-hover:scale-110 transition-transform"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -384,7 +397,7 @@ const altUrl = `/${altLang}/`;
 	<!-- Contact Form Section -->
 	<section
 		id="contact"
-		class="py-16 md:py-24 bg-gradient-to-br from-primary-50 to-gray-100"
+		class="py-16 md:py-24 bg-gradient-to-br from-primary-50 to-gray-50"
 	>
 		<div class="container mx-auto px-4">
 			<div class="text-center mb-12">
@@ -410,10 +423,10 @@ const altUrl = `/${altLang}/`;
 			>
 				<div class="text-center p-6 bg-gray-50 rounded-lg">
 					<div
-						class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+						class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
 					>
 						<svg
-							class="w-8 h-8 text-primary"
+							class="w-8 h-8 text-secondary"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -430,10 +443,10 @@ const altUrl = `/${altLang}/`;
 				</div>
 				<div class="text-center p-6 bg-gray-50 rounded-lg">
 					<div
-						class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+						class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
 					>
 						<svg
-							class="w-8 h-8 text-primary"
+							class="w-8 h-8 text-secondary"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -450,10 +463,10 @@ const altUrl = `/${altLang}/`;
 				</div>
 				<div class="text-center p-6 bg-gray-50 rounded-lg">
 					<div
-						class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"
+						class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4"
 					>
 						<svg
-							class="w-8 h-8 text-primary"
+							class="w-8 h-8 text-secondary"
 							fill="none"
 							stroke="currentColor"
 							viewBox="0 0 24 24"
@@ -548,9 +561,22 @@ const altUrl = `/${altLang}/`;
 					<h3 class="text-xl font-bold mb-4">{t.footerContact}</h3>
 					<a
 						href="tel:514XXXXXXX"
-						class="text-primary-300 hover:text-primary-200 text-lg font-semibold block mb-2"
+						class="text-primary-300 hover:text-secondary-400 text-lg font-semibold flex items-center gap-2 mb-2 group"
 					>
-						📞 {t.phone}
+						<svg
+							class="w-5 h-5 text-secondary-400 group-hover:text-secondary-300"
+							fill="none"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+							></path>
+						</svg>
+						<span>{t.phone}</span>
 					</a>
 					<p class="text-gray-400 text-sm">{t.heroLocation}</p>
 				</div>
@@ -561,7 +587,7 @@ const altUrl = `/${altLang}/`;
 					<div class="flex space-x-4">
 						<a
 							href="#"
-							class="w-10 h-10 bg-white/10 hover:bg-primary/30 border border-white/10 hover:border-primary/50 rounded-full flex items-center justify-center transition-colors"
+							class="w-10 h-10 bg-white/10 hover:bg-secondary/30 border border-white/10 hover:border-secondary/50 rounded-full flex items-center justify-center transition-colors"
 						>
 							<svg
 								class="w-5 h-5"
@@ -575,7 +601,7 @@ const altUrl = `/${altLang}/`;
 						</a>
 						<a
 							href="#"
-							class="w-10 h-10 bg-white/10 hover:bg-primary/30 border border-white/10 hover:border-primary/50 rounded-full flex items-center justify-center transition-colors"
+							class="w-10 h-10 bg-white/10 hover:bg-secondary/30 border border-white/10 hover:border-secondary/50 rounded-full flex items-center justify-center transition-colors"
 						>
 							<svg
 								class="w-5 h-5"

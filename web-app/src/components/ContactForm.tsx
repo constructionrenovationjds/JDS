@@ -72,7 +72,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="name"
             name="name"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition"
           />
         </div>
 
@@ -86,7 +86,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="phone"
             name="phone"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition"
           />
         </div>
 
@@ -100,7 +100,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="email"
             name="email"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition"
           />
         </div>
 
@@ -114,7 +114,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="city"
             name="city"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition"
           />
         </div>
 
@@ -127,7 +127,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="workType"
             name="workType"
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition bg-white"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition bg-white"
           >
             <option value="">{t.formWorkTypePlaceholder}</option>
             {workTypes.map((type) => (
@@ -147,7 +147,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             id="message"
             name="message"
             rows={4}
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition resize-none"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition resize-none"
           ></textarea>
         </div>
 
@@ -155,7 +155,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-primary hover:bg-primary-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-lg"
+          className="w-full bg-secondary-600 hover:bg-secondary-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-lg"
         >
           {isSubmitting ? t.formSubmitting : t.formSubmit}
         </button>
@@ -167,7 +167,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
           </div>
         )}
         {formStatus === 'error' && (
-          <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-lg text-center">
+          <div className="bg-orange-50 border border-orange-200 text-orange-800 px-4 py-3 rounded-lg text-center">
             {t.formError}
           </div>
         )}
