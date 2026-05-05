@@ -7,8 +7,8 @@ export const translations = {
 
     // Header
     companyName: "Construction Rénovation JDS",
-    phone: "514-XXX-XXXX",
-    rbq: "RBQ: XXXX-XXXX-XX",
+    phone: "450-328-7008",
+    rbq: "RBQ: 5878-2681-01",
     callNow: "Appelez Maintenant",
     bookAppointment: "Prendre Rendez-vous",
     language: "EN",
@@ -101,8 +101,8 @@ export const translations = {
 
     // Header
     companyName: "Construction Renovation JDS",
-    phone: "514-XXX-XXXX",
-    rbq: "RBQ: XXXX-XXXX-XX",
+    phone: "450-328-7008",
+    rbq: "RBQ: 5878-2681-01",
     callNow: "Call Now",
     bookAppointment: "Book Appointment",
     language: "FR",
