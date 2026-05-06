@@ -28,7 +28,7 @@ const pageDescription = description || t.siteDescription;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="color-scheme" content="light" />
+		<meta name="color-scheme" content="light dark" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
@@ -115,6 +115,7 @@ const pageDescription = description || t.siteDescription;
 
 <style is:global>
 	:root {
+		color-scheme: light dark;
 		/* Header height calculation: padding-y * 2 + logo height + border */
 		/* Mobile: py-3 (0.75rem * 2) + h-12 (3rem) + border-b-2 (2px) */
 		--header-height: calc(0.75rem * 2 + 3rem + 2px);
