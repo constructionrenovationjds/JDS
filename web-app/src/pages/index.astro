@@ -26,22 +26,9 @@ const t = translations.fr;
 		<!-- Redirect script for client-side (fallback) -->
 		<script is:inline>
 			(function() {
-				// Check localStorage first (returning visitor preference)
-				var saved = localStorage.getItem('language');
-				if (saved === 'en' || saved === 'fr') {
-					window.location.replace('/' + saved + '/');
-					return;
-				}
-
-				// Check browser language
-				var browserLang = navigator.language || navigator.userLanguage || '';
-				if (browserLang.toLowerCase().startsWith('en')) {
-					window.location.replace('/en/');
-					return;
-				}
-
-				// Default to French
-				window.location.replace('/fr/');
+				var browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+				var target = browserLang.startsWith('en') ? 'en' : 'fr';
+				window.location.replace('/' + target + '/');
 			})();
 		</script>
 	</head>

@@ -1,8 +1,13 @@
 ---
+import { Image, getImage } from "astro:assets";
 import { translations, type Language } from "../i18n/translations";
 import Layout from "../layouts/Layout.astro";
 import ContactForm from "./ContactForm";
 import LanguageSwitcher from "./LanguageSwitcher";
+import gallery1 from "../assets/1.jpg";
+import gallery2 from "../assets/2.jpg";
+import gallery3 from "../assets/3.jpg";
+import gallery4 from "../assets/4.jpg";
 
 interface Props {
 	lang: Language;
@@ -12,6 +17,26 @@ const { lang } = Astro.props;
 const t = translations[lang];
 const altLang = lang === "fr" ? "en" : "fr";
 const altUrl = `/${altLang}/`;
+
+const galleryImages = [
+	{ src: gallery1, alt: t.galleryAlt1 },
+	{ src: gallery2, alt: t.galleryAlt2 },
+	{ src: gallery3, alt: t.galleryAlt3 },
+	{ src: gallery4, alt: t.galleryAlt4 },
+];
+
+const galleryItems = await Promise.all(
+	galleryImages.map(async (item) => {
+		const lightbox = await getImage({ src: item.src, width: 2000, format: "webp", quality: 95 });
+		return {
+			alt: item.alt,
+			thumb: item.src,
+			lightboxSrc: lightbox.src,
+			lightboxWidth: lightbox.attributes.width,
+			lightboxHeight: lightbox.attributes.height,
+		};
+	}),
+);
 ---
 
 <Layout lang={lang}>
@@ -328,7 +353,7 @@ const altUrl = `/${altLang}/`;
 					[
 						{
 							name: t.service1,
-							icon: "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z",
+							icon: "M9 6 L6.5 3.5 a1.5 1.5 0 0 0 -1 -0.5 C4.683 3 4 3.683 4 4.5 V12 M10 5 L8 7 M2 12 H22 V14 a3 3 0 0 1 -3 3 H5 a3 3 0 0 1 -3 -3 Z M7 19 V21 M17 19 V21",
 						},
 						{
 							name: t.service2,
@@ -355,10 +380,6 @@ const altUrl = `/${altLang}/`;
 							icon: "M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z",
 						},
 						{
-							name: t.service8,
-							icon: "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
-						},
-						{
 							name: t.service9,
 							icon: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
 						},
@@ -368,11 +389,11 @@ const altUrl = `/${altLang}/`;
 						},
 					].map((service, index) => (
 						<div
-							class="bg-gray-50 hover:bg-secondary/5 p-6 rounded-lg border-2 border-transparent hover:border-secondary transition-all group"
+							class="bg-gray-50 p-6 rounded-lg"
 							key={index}
 						>
 							<svg
-								class="w-10 h-10 text-secondary mb-3 group-hover:scale-110 transition-transform"
+								class="w-10 h-10 text-secondary mb-3"
 								fill="none"
 								stroke="currentColor"
 								viewBox="0 0 24 24"
@@ -519,49 +540,28 @@ const altUrl = `/${altLang}/`;
 				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
 			>
 				{
-					[
-						{ src: "/deck.jpg", alt: "Terrasse", width: 1080, height: 1440 },
-						null,
-						null,
-						null,
-						null,
-						null,
-					].map((item, idx) => (
+					galleryItems.map((item, idx) => (
 						<div
 							class="aspect-square bg-gray-200 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow group"
 							key={idx}
 						>
-							{item ? (
-								<a
-									href={item.src}
-									data-pswp-width={item.width}
-									data-pswp-height={item.height}
-									class="block w-full h-full cursor-zoom-in"
-								>
-									<img
-										src={item.src}
-										alt={item.alt}
-										loading="lazy"
-										class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-									/>
-								</a>
-							) : (
-								<div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-gray-500 group-hover:scale-105 transition-transform">
-									<svg
-										class="w-24 h-24"
-										fill="none"
-										stroke="currentColor"
-										viewBox="0 0 24 24"
-									>
-										<path
-											stroke-linecap="round"
-											stroke-linejoin="round"
-											stroke-width="2"
-											d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-										/>
-									</svg>
-								</div>
-							)}
+							<a
+								href={item.lightboxSrc}
+								data-pswp-width={item.lightboxWidth}
+								data-pswp-height={item.lightboxHeight}
+								class="block w-full h-full cursor-zoom-in"
+							>
+								<Image
+									src={item.thumb}
+									alt={item.alt}
+									widths={[600, 900, 1200, 1600]}
+									sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+									quality={95}
+									format="webp"
+									loading="lazy"
+									class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+								/>
+							</a>
 						</div>
 					))
 				}
@@ -605,7 +605,8 @@ const altUrl = `/${altLang}/`;
 					<p class="text-gray-400 text-sm">{t.heroLocation}</p>
 				</div>
 
-				<!-- Social Media -->
+				{/* Social Media — Facebook page not created yet, restore once URL is ready */}
+				{/*
 				<div>
 					<h3 class="text-xl font-bold mb-4">{t.footerFollow}</h3>
 					<div class="flex space-x-4">
@@ -625,6 +626,7 @@ const altUrl = `/${altLang}/`;
 						</a>
 					</div>
 				</div>
+				*/}
 			</div>
 
 			<div
