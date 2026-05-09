@@ -85,6 +85,10 @@ export const translations = {
     // Gallery
     galleryTitle: "Nos Réalisations",
     gallerySubtitle: "Découvrez la qualité de notre travail",
+    galleryAlt1: "Réalisation 1",
+    galleryAlt2: "Réalisation 2",
+    galleryAlt3: "Réalisation 3",
+    galleryAlt4: "Réalisation 4",
 
     // Footer
     footerTagline: "Votre partenaire de confiance en rénovation",
@@ -179,6 +183,10 @@ export const translations = {
     // Gallery
     galleryTitle: "Our Projects",
     gallerySubtitle: "Discover the quality of our work",
+    galleryAlt1: "Project 1",
+    galleryAlt2: "Project 2",
+    galleryAlt3: "Project 3",
+    galleryAlt4: "Project 4",
 
     // Footer
     footerTagline: "Your trusted renovation partner",

@@ -9,9 +9,6 @@ export default function LanguageSwitcher({ lang }: LanguageSwitcherProps) {
   const otherLangUrl = `/${otherLang}/`;
 
   const switchLanguage = () => {
-    // Save preference to localStorage for future visits
-    localStorage.setItem('language', otherLang);
-    // Navigate to the other language
     window.location.href = otherLangUrl;
   };
 
