@@ -8,6 +8,7 @@ import gallery1 from "../assets/1.jpg";
 import gallery2 from "../assets/2.jpg";
 import gallery3 from "../assets/3.jpg";
 import gallery4 from "../assets/4.jpg";
+import gallery5 from "../assets/5.jpg";
 import logo from "../assets/logo.png";
 
 interface Props {
@@ -24,6 +25,7 @@ const galleryImages = [
 	{ src: gallery2, alt: t.galleryAlt2 },
 	{ src: gallery3, alt: t.galleryAlt3 },
 	{ src: gallery4, alt: t.galleryAlt4 },
+	{ src: gallery5, alt: t.galleryAlt5 },
 ];
 
 const galleryItems = await Promise.all(
@@ -374,24 +376,12 @@ const galleryItems = await Promise.all(
 							icon: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
 						},
 						{
-							name: t.service5,
-							icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-						},
-						{
 							name: t.service6,
 							icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
 						},
 						{
 							name: t.service7,
 							icon: "M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z",
-						},
-						{
-							name: t.service9,
-							icon: "M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01",
-						},
-						{
-							name: t.service10,
-							icon: "M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z",
 						},
 					].map((service, index) => (
 						<div
@@ -640,7 +630,7 @@ const galleryItems = await Promise.all(
 			>
 				<p>
 					&copy; {new Date().getFullYear()}
-					{t.companyName}. {t.footerRights}
+					{t.companyLegalName} {t.footerRights}
 				</p>
 			</div>
 		</div>
