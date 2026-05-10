@@ -52,7 +52,7 @@ const pageDescription = description || t.siteDescription;
 		<meta property="og:url" content={canonicalUrl} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
-		<meta property="og:site_name" content="Construction Renovation JDS" />
+		<meta property="og:site_name" content={t.companyName} />
 		<meta property="og:locale" content={lang === 'fr' ? 'fr_CA' : 'en_CA'} />
 		<meta property="og:locale:alternate" content={lang === 'fr' ? 'en_CA' : 'fr_CA'} />
 		<meta property="og:image" content={`${siteUrl}/logo.png`} />
@@ -65,7 +65,7 @@ const pageDescription = description || t.siteDescription;
 
 		<!-- Additional SEO -->
 		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Construction Renovation JDS" />
+		<meta name="author" content={t.companyName} />
 		<meta name="geo.region" content="CA-QC" />
 		<meta name="geo.placename" content="Saint-Eustache, Laurentides" />
 
@@ -73,7 +73,7 @@ const pageDescription = description || t.siteDescription;
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "HomeAndConstructionBusiness",
-			"name": "Construction Renovation JDS",
+			"name": t.companyLegalName,
 			"description": pageDescription,
 			"url": siteUrl,
 			"telephone": "+1-450-328-7008",
@@ -86,10 +86,10 @@ const pageDescription = description || t.siteDescription;
 			"areaServed": [
 				"Saint-Eustache",
 				"Laval",
-				"Sainte-Thérèse",
-				"Oka",
+				"Saint-Jérôme",
+				"Terrebonne",
 				"Laurentides",
-				"Rive-Nord"
+				"Rive-Nord de Montréal"
 			],
 			"serviceType": [
 				"Bathroom Renovation",

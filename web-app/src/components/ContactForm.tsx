@@ -13,7 +13,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
 
   const workTypes = [
     { value: 'salle-de-bain', label: t.workTypeBathroom },
-    { value: 'revetement-plancher', label: t.workTypeFlooring },
+    { value: 'ceramique-revetement-plancher', label: t.workTypeFlooring },
     { value: 'apres-sinistre', label: t.workTypeDisaster },
     { value: 'cabanon-patio', label: t.workTypeShedPatio },
     { value: 'revetement-exterieur', label: t.workTypeExterior },
@@ -21,7 +21,6 @@ export default function ContactForm({ lang }: ContactFormProps) {
     { value: 'portes-fenetres', label: t.workTypeDoorsWindows },
     { value: 'calfeutrage', label: t.workTypeCaulking },
     { value: 'finition-interieur', label: t.workTypeInteriorFinish },
-    { value: 'ceramique', label: t.workTypeCeramic },
   ];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -3,7 +3,11 @@
     "allow": [
       "Bash(copy:*)",
       "Bash(npm run dev:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(Get-ChildItem -Path . -Recurse -Depth 1)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "Bash(Format-Table -AutoSize)",
+      "PowerShell(head *)"
     ],
     "deny": [],
     "ask": []

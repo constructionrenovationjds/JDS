@@ -1,27 +1,28 @@
 export const translations = {
   fr: {
     // SEO Meta
-    siteTitle: "Construction Renovation JDS | Rénovation Résidentielle Laurentides",
-    siteDescription: "Entrepreneurs spécialisés en rénovation résidentielle. Projets clés en main avec efficacité, respect et confiance. Service dans les Laurentides et Rive-Nord. Licence RBQ.",
-    siteKeywords: "rénovation résidentielle, construction, Laurentides, Saint-Eustache, Laval, Sainte-Thérèse, Oka, RBQ, entrepreneur général, salle de bain, plancher, rénovation intérieure",
+    siteTitle: "Construction Rénovation JDS inc. | Rénovation Résidentielle Laurentides",
+    siteDescription: "Entrepreneurs spécialisés en rénovation résidentielle. Projets clés en main avec efficacité, respect et confiance. Service dans les Laurentides et la Rive-Nord de Montréal. Licence RBQ.",
+    siteKeywords: "rénovation résidentielle, construction, Laurentides, Saint-Eustache, Laval, Saint-Jérôme, Terrebonne, RBQ, entrepreneur général, salle de bain, plancher, rénovation intérieure",
 
     // Header
-    companyName: "Construction Rénovation JDS",
+    companyName: "Construction Rénovation JDS inc.",
+    companyLegalName: "Construction Rénovation JDS inc.",
     phone: "450-328-7008",
     rbq: "RBQ: 5878-2681-01",
     callNow: "Appelez Maintenant",
-    bookAppointment: "Prendre Rendez-vous",
+    bookAppointment: "Soumission gratuite",
     language: "EN",
 
     // Hero Section
     heroTitle: "Construction Rénovation JDS",
     heroSubtitle: "Entrepreneurs Spécialisés | Projets Clés en Main",
-    heroDescription: "Votre partenaire de confiance pour tous vos projets de rénovation résidentielle dans les Laurentides et Rive-Nord.",
-    heroLocation: "Saint-Eustache • Laval • Sainte-Thérèse • Oka",
+    heroDescription: "Votre partenaire de confiance pour tous vos projets de rénovation résidentielle dans les Laurentides et la Rive-Nord de Montréal.",
+    heroLocation: "Saint-Eustache • Laval • Saint-Jérôme • Terrebonne",
 
     // About Section
     aboutTitle: "Pourquoi Nous Choisir?",
-    aboutText: "Construction Renovation JDS est une petite équipe familiale spécialisée dans les rénovations résidentielles. Nous offrons des projets clés en main réalisés avec efficacité, respect et confiance. Notre mission est de créer des espaces dont vous serez fier, en mettant l'accent sur la qualité et la satisfaction du client.",
+    aboutText: "Construction Rénovation JDS est une petite équipe familiale spécialisée dans les rénovations résidentielles. Nous offrons des projets clés en main réalisés avec efficacité, respect et confiance. Notre mission est de créer des espaces dont vous serez fier, en mettant l'accent sur la qualité et la satisfaction du client.",
 
     // Values
     valuesTitle: "Nos Valeurs",
@@ -38,15 +39,12 @@ export const translations = {
     servicesTitle: "Nos Services",
     servicesSubtitle: "Expertise Complète en Rénovation",
     service1: "Salle de Bain",
-    service2: "Revêtement de Plancher",
+    service2: "Céramique / Revêtement de Plancher",
     service3: "Après Sinistre",
     service4: "Cabanon / Patio",
-    service5: "Revêtement Extérieur",
     service6: "Rénovation Intérieur & Extérieur",
     service7: "Portes et Fenêtres",
     service8: "Calfeutrage",
-    service9: "Finition Intérieur",
-    service10: "Céramique",
 
     // Form Section
     formTitle: "Demandez une Soumission Gratuite",
@@ -65,7 +63,7 @@ export const translations = {
 
     // Work Types
     workTypeBathroom: "Salle de bain",
-    workTypeFlooring: "Revêtement de plancher",
+    workTypeFlooring: "Céramique / Revêtement de plancher",
     workTypeDisaster: "Après sinistre",
     workTypeShedPatio: "Cabanon/Patio",
     workTypeExterior: "Revêtement extérieur",
@@ -73,7 +71,6 @@ export const translations = {
     workTypeDoorsWindows: "Portes et fenêtres",
     workTypeCaulking: "Calfeutrage",
     workTypeInteriorFinish: "Finition intérieur",
-    workTypeCeramic: "Céramique",
 
     // Certifications
     certificationsTitle: "Certifications & Garanties",
@@ -89,6 +86,7 @@ export const translations = {
     galleryAlt2: "Réalisation 2",
     galleryAlt3: "Réalisation 3",
     galleryAlt4: "Réalisation 4",
+    galleryAlt5: "Réalisation 5",
 
     // Footer
     footerTagline: "Votre partenaire de confiance en rénovation",
@@ -99,23 +97,24 @@ export const translations = {
   },
   en: {
     // SEO Meta
-    siteTitle: "Construction Renovation JDS | Residential Renovation Laurentides",
+    siteTitle: "Construction Renovation JDS inc. | Residential Renovation Laurentides",
     siteDescription: "Specialized residential renovation contractors. Turnkey projects with efficiency, respect and trust. Serving Laurentides and North Shore areas. RBQ Licensed.",
-    siteKeywords: "residential renovation, construction, Laurentides, Saint-Eustache, Laval, Sainte-Thérèse, Oka, RBQ, general contractor, bathroom, flooring, interior renovation",
+    siteKeywords: "residential renovation, construction, Laurentides, Saint-Eustache, Laval, Saint-Jérôme, Terrebonne, RBQ, general contractor, bathroom, flooring, interior renovation",
 
     // Header
-    companyName: "Construction Renovation JDS",
+    companyName: "Construction Renovation JDS inc.",
+    companyLegalName: "Construction Renovation JDS inc.",
     phone: "450-328-7008",
     rbq: "RBQ: 5878-2681-01",
     callNow: "Call Now",
-    bookAppointment: "Book Appointment",
+    bookAppointment: "Free quote",
     language: "FR",
 
     // Hero Section
-    heroTitle: "Construction Rénovation JDS",
+    heroTitle: "Construction Renovation JDS",
     heroSubtitle: "Specialized Contractors | Turnkey Projects",
     heroDescription: "Your trusted partner for all residential renovation projects in Laurentides and North Shore.",
-    heroLocation: "Saint-Eustache • Laval • Sainte-Thérèse • Oka",
+    heroLocation: "Saint-Eustache • Laval • Saint-Jérôme • Terrebonne",
 
     // About Section
     aboutTitle: "Why Choose Us?",
@@ -136,15 +135,12 @@ export const translations = {
     servicesTitle: "Our Services",
     servicesSubtitle: "Complete Renovation Expertise",
     service1: "Bathroom",
-    service2: "Flooring",
+    service2: "Ceramic / Flooring",
     service3: "Disaster Recovery",
     service4: "Shed / Patio",
-    service5: "Exterior Siding",
     service6: "Interior & Exterior Renovation",
     service7: "Doors and Windows",
     service8: "Caulking",
-    service9: "Interior Finishing",
-    service10: "Ceramic",
 
     // Form Section
     formTitle: "Request a Free Quote",
@@ -163,7 +159,7 @@ export const translations = {
 
     // Work Types
     workTypeBathroom: "Bathroom",
-    workTypeFlooring: "Flooring",
+    workTypeFlooring: "Ceramic / Flooring",
     workTypeDisaster: "Disaster Recovery",
     workTypeShedPatio: "Shed/Patio",
     workTypeExterior: "Exterior Siding",
@@ -171,7 +167,6 @@ export const translations = {
     workTypeDoorsWindows: "Doors and Windows",
     workTypeCaulking: "Caulking",
     workTypeInteriorFinish: "Interior Finishing",
-    workTypeCeramic: "Ceramic",
 
     // Certifications
     certificationsTitle: "Certifications & Guarantees",
@@ -187,6 +182,7 @@ export const translations = {
     galleryAlt2: "Project 2",
     galleryAlt3: "Project 3",
     galleryAlt4: "Project 4",
+    galleryAlt5: "Project 5",
 
     // Footer
     footerTagline: "Your trusted renovation partner",
