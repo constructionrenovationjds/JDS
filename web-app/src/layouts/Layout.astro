@@ -15,7 +15,7 @@ const {
 } = Astro.props;
 
 const t = translations[lang];
-const siteUrl = 'https://constructionjds.com'; // Update with your actual domain
+const siteUrl = Astro.site ? Astro.site.toString().replace(/\/$/, '') : '';
 const currentPath = lang === 'fr' ? '/fr/' : '/en/';
 const canonicalUrl = `${siteUrl}${currentPath}`;
 
