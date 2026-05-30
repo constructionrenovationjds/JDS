@@ -30,6 +30,19 @@
   to = "/fr/"
   status = 302
 
+# Trailing-slash enforcement for language roots
+[[redirects]]
+  from = "/en"
+  to = "/en/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/fr"
+  to = "/fr/"
+  status = 301
+  force = true
+
 # Headers for security and performance
 [[headers]]
   for = "/*"

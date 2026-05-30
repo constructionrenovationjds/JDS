@@ -6,7 +6,13 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), sitemap()],
+  integrations: [
+    react(),
+    tailwind(),
+    sitemap({
+      filter: (page) => page !== 'https://constructionrenovationjds.ca/',
+    }),
+  ],
   output: 'static',
   site: 'https://constructionrenovationjds.ca'
 });
