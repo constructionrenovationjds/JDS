@@ -30,7 +30,12 @@ const galleryImages = [
 
 const galleryItems = await Promise.all(
 	galleryImages.map(async (item) => {
-		const lightbox = await getImage({ src: item.src, width: 2000, format: "webp", quality: 95 });
+		const lightbox = await getImage({
+			src: item.src,
+			width: 2000,
+			format: "webp",
+			quality: 95,
+		});
 		return {
 			alt: item.alt,
 			thumb: item.src,
@@ -384,10 +389,7 @@ const galleryItems = await Promise.all(
 							icon: "M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z",
 						},
 					].map((service, index) => (
-						<div
-							class="bg-gray-50 p-6 rounded-lg"
-							key={index}
-						>
+						<div class="bg-gray-50 p-6 rounded-lg" key={index}>
 							<svg
 								class="w-10 h-10 text-secondary mb-3"
 								fill="none"
@@ -601,13 +603,15 @@ const galleryItems = await Promise.all(
 					<p class="text-gray-400 text-sm">{t.heroLocation}</p>
 				</div>
 
-				{/* Social Media — Facebook page not created yet, restore once URL is ready */}
-				{/*
+				<!-- Social Media -->
 				<div>
 					<h3 class="text-xl font-bold mb-4">{t.footerFollow}</h3>
 					<div class="flex space-x-4">
 						<a
-							href="#"
+							href="https://www.facebook.com/profile.php?id=61589421523150"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Facebook"
 							class="w-10 h-10 bg-white/10 hover:bg-secondary/30 border border-white/10 hover:border-secondary/50 rounded-full flex items-center justify-center transition-colors"
 						>
 							<svg
@@ -622,7 +626,6 @@ const galleryItems = await Promise.all(
 						</a>
 					</div>
 				</div>
-				*/}
 			</div>
 
 			<div
@@ -630,7 +633,8 @@ const galleryItems = await Promise.all(
 			>
 				<p>
 					&copy; {new Date().getFullYear()}
-					{t.companyLegalName} {t.footerRights}
+					{t.companyLegalName}
+					{t.footerRights}
 				</p>
 			</div>
 		</div>
